@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 class Product(models.Model):
     name = models.CharField(max_length=150, blank=False, null=False, verbose_name=_("Product name"))
-    shop = models.CharField(max_length=250, blank=False, null=False)
+    shop = models.CharField(max_length=250, blank=False, null=True)
     bought_on = models.DateField(null=False, blank=False)
     warranty_date = models.DateField(null=False, blank=False)
     description = models.TextField(null=True, blank=True)
@@ -14,3 +14,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class NewTabel(models.Model):
+    name = models.CharField(max_length=150, blank=False, null=False, verbose_name=_("Product name"))
